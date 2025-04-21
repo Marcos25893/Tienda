@@ -17,7 +17,7 @@ public class Main {
         tienda.mostrarInventario();
 
      // Calcular el valor total del inventario
-        double valorInventario = tienda.precioTotalStock();
+        double valorInventario = calculoDecuentoVenta(tienda);
         System.out.println("\nValor total del inventario: " + valorInventario);
         
         // Realizar ventas
@@ -31,9 +31,13 @@ public class Main {
         tienda.mostrarInventario();  
 
         // Calcular el valor total del inventario despues de la venta
-         valorInventario = tienda.precioTotalStock();
+         valorInventario = calculoDecuentoVenta(tienda);
         System.out.println("\nValor total del inventario despues de la venta: " + valorInventario);
     }
+
+	private static double calculoDecuentoVenta(Tienda tienda) {
+		return tienda.precioTotalStock();
+	}
 	
 
 }
