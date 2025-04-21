@@ -31,11 +31,15 @@ public class Tienda {
 	                double descuento = 0;
 
 	                // Aplicamos descuento según el total
-	                if (total >= 50 && total <= 100) {
+	                boolean descuentoInicial = total >= 50 && total <= 100;
+					if (descuentoInicial) {
 	                    descuento = DESCUENTO_10_PORCIENTO;  // 10% de descuento
-	                } else if (total > 100) {
-	                    descuento = DESCUENTO_25_PORCIENTO;  // 25% de descuento
-	                }
+	                } else {
+						boolean descuentoAvanzado = total > 100;
+						if (descuentoAvanzado) {
+						    descuento = DESCUENTO_25_PORCIENTO;  // 25% de descuento
+						}
+					}
 
 	                // Calculamos el total con el descuento
 	                double totalConDescuento = calculoDescuentoVenta(total, descuento);
